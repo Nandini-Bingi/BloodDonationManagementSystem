@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Not Eligible Donors{% endblock %}
+
+{% block content %}
+
+<div class="donor-list-page">
+
+    <h1 style="color: white;">❌ Donors Not Eligible Today</h1>
+
+    <p class="donor-count" style="color: white;">
+        Total Not Eligible: {{ donors|length }}
+    </p>
+
+    {% if donors %}
+
+    <div class="donor-table-container">
+
+        <table class="donor-table">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>Phone</th>
+                    <th>Last Donation</th>
+                    <th>Next Eligible Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for donor in donors %}
+
+                <tr>
+                    <td>{{ donor.full_name }}</td>
+
+                    <td>{{ donor.blood_group }}</td>
+
+                    <td>{{ donor.phone_number }}</td>
+
+                    <td>
+                        {% if donor.last_donation_date %}
+                            {{ donor.last_donation_date }}
+                        {% else %}
+                            No donation recorded
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {{ donor.next_eligible_date }}
+                    </td>
+
+                    <td>
+                        <a href="{% url 'donor_details' donor.id %}">
+                            <button type="button">View</button>
+                        </a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+        <div class="no-donors">
+            <p>No donors are currently ineligible.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

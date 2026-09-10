@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Search Donor{% endblock %}
+
+{% block content %}
+
+<div class="donor-details-page">
+
+    <div class="donor-profile">
+
+        <h1>👤 Donor Profile</h1>
+
+        <div class="profile-row">
+            <span>Name</span>
+            <strong>{{ donor.full_name }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Phone</span>
+            <strong>{{ donor.phone_number }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Aadhaar</span>
+            <strong>
+                XXXX XXXX {{ donor.aadhaar_number|slice:"-4:" }}
+            </strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Blood Group</span>
+            <strong>{{ donor.blood_group }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Age</span>
+            <strong>{{ donor.age }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Gender</span>
+            <strong>{{ donor.gender }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Address</span>
+            <strong>{{ donor.address }}</strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Last Donation</span>
+            <strong>
+                {% if donor.last_donation_date %}
+                    {{ donor.last_donation_date }}
+                {% else %}
+                    No donation recorded
+                {% endif %}
+            </strong>
+        </div>
+
+        <div class="profile-row">
+            <span>Next Eligible Date</span>
+            <strong>
+                {% if donor.next_eligible_date %}
+                    {{ donor.next_eligible_date }}
+                {% else %}
+                    Not available
+                {% endif %}
+            </strong>
+        </div>
+
+
+        <!-- Eligibility Check -->
+
+        {% if not donor.next_eligible_date or donor.next_eligible_date <= today %}
+
+            <div class="eligibility-status">
+                <h3>✅ Eligible to Donate</h3>
+
+                <form method="POST"
+                      action="{% url 'update_donation' donor.id %}">
+
+                    {% csrf_token %}
+
+                    <button type="submit">
+                        Update Donation
+                    </button>
+
+                </form>
+            </div>
+
+        {% else %}
+
+            <div class="eligibility-status">
+                <h3>❌ Not Eligible to Donate Yet</h3>
+
+                <p>
+                    This donor can donate again on
+                    <strong>{{ donor.next_eligible_date }}</strong>.
+                </p>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

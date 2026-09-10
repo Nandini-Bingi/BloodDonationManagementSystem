@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Doctor Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <h1 style="color: white;">🩸 Doctor Dashboard</h1>
+
+    <div class="dashboard-cards">
+
+        <div class="card"
+        onclick="window.location.href='{% url 'total_donors' %}'"
+         style="cursor: pointer;">
+
+        <h2>{{ total_donors }}</h2>
+        <p>Total Donors</p>
+
+        </div>
+
+        <div class="card"
+         onclick="window.location.href='{% url 'eligible_today' %}'"
+        style="cursor: pointer;">
+
+        <h2>{{ eligible_today }}</h2>
+        <p>Eligible Today</p>
+
+        </div>
+
+        <div class="card"
+         onclick="window.location.href='{% url 'donated_today' %}'"
+        style="cursor: pointer;">
+
+        <h2>{{ donated_today }}</h2>
+        <p>Donated Today</p>
+
+        </div>
+
+        <div class="card"
+         onclick="window.location.href='{% url 'not_eligible' %}'"
+        style="cursor: pointer;">
+
+        <h2>{{ not_eligible }}</h2>
+        <p>Not Eligible</p>
+
+        </div>
+
+    </div>
+
+    <div class="search-box">
+
+        <h2 style="color: #d90429;">Search Donor</h2>
+
+        <form action="{% url 'search_donor' %}" method="GET">
+
+    <input
+    type="text"
+    name="query"
+    placeholder="Enter Aadhaar Number or Phone Number"
+    autocomplete="off"
+    required>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+    </div>
+
+</div>
+
+{% endblock %}

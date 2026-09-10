@@ -1,0 +1,43 @@
+.dashboard{
+    width:90%;
+    margin:40px auto;
+}
+
+.dashboard h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+/* rgba(0,0,0,.1) */
+.card h2{
+    color:#d90429;
+    font-size:40px;
+}
+
+.search-box{
+    margin-top:50px;
+    text-align:center;
+}
+
+.search-box input{
+    width:350px;
+    padding:12px;
+}
+
+.search-box button{
+    padding:12px 20px;
+}
+

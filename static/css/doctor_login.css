@@ -1,0 +1,69 @@
+.doctor-login-page {
+min-height: calc(100vh - 80px);
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 100px 20px 40px;
+box-sizing: border-box;
+}
+
+.login-card {
+width: 100%;
+max-width: 450px;
+background: white;
+padding: 40px;
+border-radius: 15px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+box-sizing: border-box;
+}
+
+.login-card h2 {
+text-align: center;
+margin-bottom: 30px;
+color: #222;
+}
+
+.login-card form {
+width: 100%;
+}
+
+.login-card p {
+margin-bottom: 20px;
+}
+
+.login-card label {
+display: block;
+margin-bottom: 8px;
+font-weight: 600;
+color: #333;
+}
+
+.login-card input {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 6px;
+box-sizing: border-box;
+font-size: 16px;
+}
+
+.login-card input:focus {
+outline: none;
+border-color: #d90429;
+}
+
+.login-card button {
+width: 100%;
+padding: 12px;
+margin-top: 10px;
+border: none;
+border-radius: 6px;
+background: #d90429;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.login-card button:hover {
+background: #b80322;
+}

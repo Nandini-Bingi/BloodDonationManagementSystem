@@ -1,0 +1,39 @@
+.donor-details-page {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.donor-profile {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.donor-profile h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-row span {
+    font-weight: 600;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.profile-row strong {
+    text-align: left;
+}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Become a Donor{% endblock %}
+
+{% block content %}
+
+{% include "includes/navbar.html" %}
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <h1>Become a Blood Donor</h1>
+
+        <p>
+            Join BloodBridge and help save lives through voluntary blood donation.
+        </p>
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="message {{ message.tags }}">
+
+                    {{ message }}
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
