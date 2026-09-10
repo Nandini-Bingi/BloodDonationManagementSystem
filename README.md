@@ -1,7 +1,7 @@
 
 # Blood Donation Management System
 
-## 📌 About the Project
+## About the Project
 
 The Blood Donation Management System is a web-based application designed
 to simplify the process of managing blood donors, blood requests, and
@@ -10,7 +10,7 @@ blood availability.
 The system helps users efficiently manage donor information and blood
 requirements while making the overall blood donation process more organized.
 
-## ✨ Features
+## Features
 
 - User registration and login
 - Donor registration
@@ -21,7 +21,7 @@ requirements while making the overall blood donation process more organized.
 - Manage donor and recipient details
 - Simple and user-friendly interface
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python
 - Django
@@ -29,5 +29,4 @@ requirements while making the overall blood donation process more organized.
 - CSS
 - JavaScript
 - MySQL
-- Git
-- GitHub
+
